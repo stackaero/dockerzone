@@ -1,0 +1,12 @@
+version: '2'
+services:
+  tomcat:
+    image: tomcat
+    environment:
+        JAVA_HOME: "/usr/lib/jvm/jdk1.8.0_60"
+        JRE_HOME: "/usr/lib/jvm/jdk1.8.0_60/jre"
+    ports:
+        - "8080:8080"
+    volumes:
+        - "./usr/tomcat/data:/opt/tomcat/data"
+    
