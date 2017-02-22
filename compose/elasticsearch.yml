@@ -1,0 +1,23 @@
+version: '2'
+services:
+  elasticsearch:
+    restart: always
+    image: elasticsearch
+    environment:
+        ES_JAVA_OPTS: "-Xmx256M -Xms128M"
+    ports:
+        - "9200:9200"
+        - "9300:9300"
+    volumes:
+        - "./elasticsearch/log:/usr/share/elasticsearch/log"
+        - "./elasticsearch/data:/usr/share/elasticsearch/data"
+        - "./elasticsearch/plugins:/usr/share/elasticsearch/plugins"
+  kibana:
+    image: kibana
+    restart: always
+    ports:
+      - 5601:5601
+    environment:
+      - ELASTICSEARCH_URL=http://elasticsearch:9200   
+    links:
+       - elasticsearch:elasticsearch   

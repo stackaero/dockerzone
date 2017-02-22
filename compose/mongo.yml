@@ -1,0 +1,10 @@
+version: '2'
+services:
+  mongo:
+    restart: always
+    image: mongo
+    volumes:
+       - ./mongo-data:/data/db
+    ports:
+      - 27017:27017
+    command: mongod --smallfiles --oplogSize 128
