@@ -95,16 +95,17 @@ That's it, you have a running Docker container.
 [Your basic isolated Docker process](http://etherealmind.com/basics-docker-containers-hypervisors-coreos/).  Containers are to Virtual Machines as threads are to processes.  Or you can think of them as chroots on steroids.
 
 ### Lifecycle
+https://docs.docker.com/engine/reference/commandline/info/
 
-* [`docker create`](http://docs.docker.io/reference/commandline/cli/#create) creates a container but does not start it.
-* [`docker run`](http://docs.docker.io/reference/commandline/cli/#run) creates and starts a container in one operation.
-* [`docker stop`](http://docs.docker.io/reference/commandline/cli/#stop) stops it.
-* [`docker start`](http://docs.docker.io/reference/commandline/cli/#start) will start it again.
-* [`docker restart`](http://docs.docker.io/reference/commandline/cli/#restart) restarts a container.
-* [`docker rm`](http://docs.docker.io/reference/commandline/cli/#rm) deletes a container.
-* [`docker kill`](http://docs.docker.io/reference/commandline/cli/#kill) sends a SIGKILL to a container.
-* [`docker attach`](http://docs.docker.io/reference/commandline/cli/#attach) will connect to a running container.
-* [`docker wait`](http://docs.docker.io/reference/commandline/cli/#wait) blocks until container stops.
+* [`docker create`](https://docs.docker.com/engine/reference/commandline/create) creates a container but does not start it.
+* [`docker run`](https://docs.docker.com/engine/reference/commandline/run) creates and starts a container in one operation.
+* [`docker stop`](https://docs.docker.com/engine/reference/commandline/stop) stops it.
+* [`docker start`](https://docs.docker.com/engine/reference/commandline/start) will start it again.
+* [`docker restart`](https://docs.docker.com/engine/reference/commandline/restart) restarts a container.
+* [`docker rm`](https://docs.docker.com/engine/reference/commandline/rm) deletes a container.
+* [`docker kill`](https://docs.docker.com/engine/reference/commandline/kill) sends a SIGKILL to a container.
+* [`docker attach`](https://docs.docker.com/engine/reference/commandline/attach) will connect to a running container.
+* [`docker wait`](https://docs.docker.com/engine/reference/commandline/wait) blocks until container stops.
 
 If you want to run and then interact with a container, `docker start`, then spawn a shell as described in [Executing Commands](https://github.com/wsargent/docker-cheat-sheet/#executing-commands).
 
@@ -122,13 +123,13 @@ Restart policies on crashed docker instances are [covered here](http://container
 
 ### Info
 
-* [`docker ps`](http://docs.docker.io/reference/commandline/cli/#ps) shows running containers.
-* [`docker inspect`](http://docs.docker.io/reference/commandline/cli/#inspect) looks at all the info on a container (including IP address).
-* [`docker logs`](http://docs.docker.io/reference/commandline/cli/#logs) gets logs from container.
-* [`docker events`](http://docs.docker.io/reference/commandline/cli/#events) gets events from container.
-* [`docker port`](http://docs.docker.io/reference/commandline/cli/#port) shows public facing port of container.
-* [`docker top`](http://docs.docker.io/reference/commandline/cli/#top) shows running processes in container.
-* [`docker diff`](http://docs.docker.io/reference/commandline/cli/#diff) shows changed files in the container's FS.
+* [`docker ps`](https://docs.docker.com/engine/reference/commandline/ps) shows running containers.
+* [`docker inspect`](https://docs.docker.com/engine/reference/commandline/inspect) looks at all the info on a container (including IP address).
+* [`docker logs`]https://docs.docker.com/engine/reference/commandline/logs) gets logs from container.
+* [`docker events`](https://docs.docker.com/engine/reference/commandline/events) gets events from container.
+* [`docker port`](https://docs.docker.com/engine/reference/commandline/port) shows public facing port of container.
+* [`docker top`](https://docs.docker.com/engine/reference/commandline/top) shows running processes in container.
+* [`docker diff`](https://docs.docker.com/engine/reference/commandline/diff) shows changed files in the container's FS.
 
 `docker ps -a` shows running and stopped containers.
 
@@ -136,12 +137,12 @@ Restart policies on crashed docker instances are [covered here](http://container
 
 There doesn't seem to be a way to use docker directly to import files into a container's filesystem.  The closest thing is to mount a host file or directory as a data volume and copy it from inside the container.
 
-* [`docker cp`](http://docs.docker.io/reference/commandline/cli/#cp) copies files or folders out of a container's filesystem.
-* [`docker export`](http://docs.docker.io/reference/commandline/cli/#export) turns container filesystem into tarball.
+* [`docker cp`](https://docs.docker.com/engine/reference/commandline/cp) copies files or folders out of a container's filesystem.
+* [`docker export`](https://docs.docker.com/engine/reference/commandline/export) turns container filesystem into tarball.
 
 ### Executing Commands
 
-* [`docker exec`](https://docs.docker.com/reference/commandline/cli/#exec) to execute a command in container.
+* [`docker exec`](https://docs.docker.com/engine/reference/commandline/exec) to execute a command in container.
 
 To enter a running container, attach a new shell process to a running container called foo, use: `docker exec -it foo /bin/bash`.
 
@@ -151,19 +152,19 @@ Images are just [templates for docker containers](https://docs.docker.com/introd
 
 ### Lifecycle
 
-* [`docker images`](http://docs.docker.io/reference/commandline/cli/#images) shows all images.
-* [`docker import`](http://docs.docker.io/reference/commandline/cli/#import) creates an image from a tarball.
-* [`docker build`](http://docs.docker.io/reference/commandline/cli/#build) creates image from Dockerfile.
-* [`docker commit`](http://docs.docker.io/reference/commandline/cli/#commit) creates image from a container.
-* [`docker rmi`](http://docs.docker.io/reference/commandline/cli/#rmi) removes an image.
-* [`docker insert`](http://docs.docker.io/reference/commandline/cli/#insert) inserts a file from URL into image. (kind of odd, you'd think images would be immutable after create)
-* [`docker load`](http://docs.docker.io/reference/commandline/cli/#load) loads an image from a tar archive as STDIN, including images and tags (as of 0.7).
-* [`docker save`](http://docs.docker.io/reference/commandline/cli/#save) saves an image to a tar archive stream to STDOUT with all parent layers, tags & versions (as of 0.7).
+* [`docker images`](https://docs.docker.com/engine/reference/commandline/images) shows all images.
+* [`docker import`](https://docs.docker.com/engine/reference/commandline/import) creates an image from a tarball.
+* [`docker build`](https://docs.docker.com/engine/reference/commandline/build) creates image from Dockerfile.
+* [`docker commit`](https://docs.docker.com/engine/reference/commandline/commit) creates image from a container.
+* [`docker rmi`](https://docs.docker.com/engine/reference/commandline/rmi) removes an image.
+* [`docker insert`](https://docs.docker.com/engine/reference/commandline/insert) inserts a file from URL into image. (kind of odd, you'd think images would be immutable after create)
+* [`docker load`](https://docs.docker.com/engine/reference/commandline/load) loads an image from a tar archive as STDIN, including images and tags (as of 0.7).
+* [`docker save`](https://docs.docker.com/engine/reference/commandline/save) saves an image to a tar archive stream to STDOUT with all parent layers, tags & versions (as of 0.7).
 
 ### Info
 
-* [`docker history`](http://docs.docker.io/reference/commandline/cli/#history) shows history of image.
-* [`docker tag`](http://docs.docker.io/reference/commandline/cli/#tag) tags an image to a name (local or registry).
+* [`docker history`](https://docs.docker.com/engine/reference/commandline/history) shows history of image.
+* [`docker tag`](https://docs.docker.com/engine/reference/commandline/tag) tags an image to a name (local or registry).
 
 Docker image ids are [sensitive information](https://medium.com/@quayio/your-docker-image-ids-are-secrets-and-its-time-you-treated-them-that-way-f55e9f14c1a4) and should not be exposed to the outside world.  Treat them like passwords.
 
@@ -175,10 +176,10 @@ A registry is a *host* -- a server that stores repositories and provides an HTTP
 
 Docker.io hosts its own [index](https://index.docker.io/) to a central registry which contains a large number of repositories.  Having said that, the central docker registry [does not do a good job of verifying images](https://titanous.com/posts/docker-insecurity) and should be avoided if you're worried about security.
 
-* [`docker login`](http://docs.docker.io/reference/commandline/cli/#login) to login to a registry.
-* [`docker search`](http://docs.docker.io/reference/commandline/cli/#search) searches registry for image.
-* [`docker pull`](http://docs.docker.io/reference/commandline/cli/#pull) pulls an image from registry to local machine.
-* [`docker push`](http://docs.docker.io/reference/commandline/cli/#push) pushes an image to the registry from local machine.
+* [`docker login`](https://docs.docker.com/engine/reference/commandline/login) to login to a registry.
+* [`docker search`](https://docs.docker.com/engine/reference/commandline/search) searches registry for image.
+* [`docker pull`](https://docs.docker.com/engine/reference/commandline/pull) pulls an image from registry to local machine.
+* [`docker push`](https://docs.docker.com/engine/reference/commandline/loginpush) pushes an image to the registry from local machine.
 
 ### Run local registry
 
@@ -193,20 +194,20 @@ In order to push to this repository tag image with `repositoryHostName:5000/imag
 
 ### Instructions
 
-* [.dockerignore](https://docs.docker.com/reference/builder/#the-dockerignore-file)
-* [FROM](http://docs.docker.io/reference/builder/#from)
-* [MAINTAINER](http://docs.docker.io/reference/builder/#maintainer)
-* [RUN](http://docs.docker.io/reference/builder/#run)
-* [CMD](http://docs.docker.io/reference/builder/#cmd)
-* [EXPOSE](http://docs.docker.io/reference/builder/#expose)
-* [ENV](http://docs.docker.io/reference/builder/#env)
-* [ADD](http://docs.docker.io/reference/builder/#add)
-* [COPY](http://docs.docker.io/reference/builder/#copy)
-* [ENTRYPOINT](http://docs.docker.io/reference/builder/#entrypoint)
-* [VOLUME](http://docs.docker.io/reference/builder/#volume)
-* [USER](http://docs.docker.io/reference/builder/#user)
-* [WORKDIR](http://docs.docker.io/reference/builder/#workdir)
-* [ONBUILD](http://docs.docker.io/reference/builder/#onbuild)
+* [.dockerignore](https://docs.docker.com/engine/reference/builder/#/dockerignore-file)
+* [FROM](https://docs.docker.com/engine/reference/builder/#/from)
+* [MAINTAINER](https://docs.docker.com/engine/reference/builder/#/maintainer)
+* [RUN](https://docs.docker.com/engine/reference/builder/#/run)
+* [CMD](https://docs.docker.com/engine/reference/builder/#/cmd)
+* [EXPOSE](https://docs.docker.com/engine/reference/builder/#/expose)
+* [ENV](https://docs.docker.com/engine/reference/builder/#/env)
+* [ADD](https://docs.docker.com/engine/reference/builder/#/add)
+* [COPY](https://docs.docker.com/engine/reference/builder/#/copy)
+* [ENTRYPOINT](https://docs.docker.com/engine/reference/builder/#/entrypoint)
+* [VOLUME](https://docs.docker.com/engine/reference/builder/#/volume)
+* [USER](https://docs.docker.com/engine/reference/builder/#/user)
+* [WORKDIR](https://docs.docker.com/engine/reference/builder/#/workdir)
+* [ONBUILD](https://docs.docker.com/engine/reference/builder/#/onbuild)
 
 ### Tutorial
 
