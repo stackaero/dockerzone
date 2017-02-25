@@ -1,7 +1,7 @@
 version: '2'
 services:
   tomcat:
-    image: tomcat
+    image: vvinayreddy/tomcat
     environment:
         JAVA_HOME: "/usr/lib/jvm/jdk1.8.0_60"
         JRE_HOME: "/usr/lib/jvm/jdk1.8.0_60/jre"
