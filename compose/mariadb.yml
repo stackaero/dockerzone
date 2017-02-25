@@ -1,0 +1,10 @@
+version: '2'
+services:
+  mariadb-server:
+    restart: always
+    image: mariadb
+    volumes:
+       - /data:/var/log/mysql:/etc/mysql
+    ports:
+      - 3306:3306
+    command: /scripts/start.sh
