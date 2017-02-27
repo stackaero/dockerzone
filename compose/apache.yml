@@ -1,0 +1,10 @@
+version: '2'
+services:
+  apache:
+    restart: always
+    image: apache
+    volumes:
+       - ./var/log/httpd
+    ports:
+      - 8080:8080
+    command: /usr/sbin/httpd", "-D", "FOREGROUND
