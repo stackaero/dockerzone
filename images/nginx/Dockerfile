@@ -49,11 +49,9 @@ RUN wget http://nginx.org/download/nginx-1.10.3.tar.gz -O /opt/nginx-1.10.3.tar.
     && ./configure --prefix=/usr \
     && make \
     && make install
+
+# default HTML pages location in nginx
     
-#Copying service file
-
-COPY nginx.service /etc/systemd/system/nginx.service
-
 VOLUME /opt/nginx-1.10.3/html
 
 EXPOSE 80
