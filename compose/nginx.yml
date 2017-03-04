@@ -1,0 +1,8 @@
+version: '1.11'
+services:
+  nginx:
+    image: naiduklr936/nginx
+    ports:
+     - "80:80"
+    volumes:
+     - "./nginx/www:/opt/nginx-1.10.3/html"
