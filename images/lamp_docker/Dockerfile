@@ -5,8 +5,7 @@ MAINTAINER Mantri
 RUN apt-get update && apt-get -y install ntp && apt-get install -y mariadb-server\
     && apt-get install -y python-pip && pip install -U pip && \
     apt-get install python-dev libmysqlclient-dev\
-    && pip install MySQL-python && apt-get install -y apache2 php php-mysql\
-    && systemctl enable apache2.service
+    && pip install MySQL-python
 
 COPY ntp.conf.j2  /etc/ntp.conf
 
@@ -14,8 +13,6 @@ COPY my.cnf.j2  /etc/my.cnf
 
 RUN touch /var/log/mysqld.log &&  mkdir -p /var/run/mysqld && chmod 777 /var/lib/mysql && \
        touch /var/run/mysqld/mysqld.sock
-
-EXPOSE 80
 
 VOLUME ["/var/lib/mysql/"]
 
