@@ -1,0 +1,6 @@
+version: "2"
+services:
+  nodejs:
+    image: skare0404/nodejs
+    ports:
+    - 8080:8080
