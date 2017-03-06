@@ -1,0 +1,6 @@
+services:
+  supervisor:
+    restart: always
+    image: supervisor
+    
+    command: /usr/bin/supervisord
